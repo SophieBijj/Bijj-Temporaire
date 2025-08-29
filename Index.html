@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bijj - Univers Musical</title>
+  <title>Sophie Bijjani - Inspire, Exprime</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -12,25 +12,17 @@
   
   <!-- Icônes en haut -->
   <div class="absolute top-6 right-6 flex gap-4 text-2xl">
-    <a href="https://youtube.com/@bijjmusic" target="_blank" class="text-red-600 hover:text-red-700">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://open.spotify.com/artist/2WcxpQ0zS7oqWxHllxPwIk" target="_blank" class="text-green-500 hover:text-green-600">
-      <i class="fab fa-spotify"></i>
-    </a>
-    <a href="https://www.instagram.com/bijj.music" target="_blank" class="text-pink-500 hover:text-pink-600">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.deezer.com/artist/157537942" target="_blank" class="text-blue-500 hover:text-blue-600">
-      <i class="fab fa-deezer"></i>
-    </a>
+    <a href="https://youtube.com/@bijjmusic" target="_blank" class="text-red-600 hover:text-red-700"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/artist/2WcxpQ0zS7oqWxHllxPwIk" target="_blank" class="text-green-500 hover:text-green-600"><i class="fab fa-spotify"></i></a>
+    <a href="https://www.instagram.com/bijj.music" target="_blank" class="text-pink-500 hover:text-pink-600"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.deezer.com/artist/157537942" target="_blank" class="text-blue-500 hover:text-blue-600"><i class="fab fa-deezer"></i></a>
   </div>
 
   <div class="bg-white/90 shadow-xl rounded-2xl p-10 max-w-2xl w-full text-center">
     
     <!-- Logo -->
     <div class="flex justify-center mb-6">
-      <img src="logo.png" alt="Logo Bijj" class="h-24">
+      <img src="logo.png" alt="Logo Sophie Bijjani" class="h-24">
     </div>
 
     <!-- Portrait -->
@@ -40,21 +32,27 @@
     </div>
 
     <!-- Accroche -->
-    <h1 class="text-2xl font-semibold mb-4">Je suis <span class="font-bold">Bijj</span></h1>
+    <h1 class="text-3xl font-bold mb-2">Sophie Bijjani</h1>
+    <h2 class="text-lg italic text-gray-600 mb-6">Inspire, exprime.</h2>
     <p class="mb-8 text-gray-700 leading-relaxed">
-      En ce moment je redessine mon univers musical.<br>
+      Bienvenue sur mon site.<br>
+      Je suis en train de me refaire une beauté et une nouvelle identité artistique.<br>
       En attendant, tu peux me retrouver ici.
     </p>
 
     <!-- Mailing list -->
-    <form name="newsletter" method="POST" data-netlify="true" class="mb-6">
+    <form name="newsletter" method="POST" data-netlify="true" class="mb-8">
       <input type="hidden" name="form-name" value="newsletter">
-      <p class="font-semibold mb-2">Inscris-toi à ma mailing list :</p>
+      <h3 class="text-xl font-semibold mb-2">🎤 Inspirations Vocales</h3>
+      <p class="text-sm text-gray-600 mb-4">
+        Recevez mes réflexions sur la voix, les dates d'ateliers et concerts,<br>
+        ainsi que quelques surprises musicales.
+      </p>
       <div class="flex gap-2">
-        <input type="email" name="email" placeholder="Ton email" required 
+        <input type="email" name="email" placeholder="Votre adresse email" required 
                class="flex-1 px-4 py-2 rounded-xl border">
         <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-xl hover:bg-purple-700">
-          S'inscrire
+          S'abonner
         </button>
       </div>
     </form>
@@ -62,10 +60,10 @@
     <!-- Contact form -->
     <form name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact">
-      <p class="font-semibold mb-2">Écris-moi directement :</p>
-      <input type="text" name="name" placeholder="Ton nom" required class="w-full px-4 py-2 rounded-xl border mb-2">
-      <input type="email" name="email" placeholder="Ton email" required class="w-full px-4 py-2 rounded-xl border mb-2">
-      <textarea name="message" placeholder="Ton message" required class="w-full px-4 py-2 rounded-xl border mb-2"></textarea>
+      <h3 class="text-xl font-semibold mb-2">Je reste disponible pour donner des ateliers & concerts</h3>
+      <input type="text" name="name" placeholder="Votre nom" required class="w-full px-4 py-2 rounded-xl border mb-2">
+      <input type="email" name="email" placeholder="Votre email" required class="w-full px-4 py-2 rounded-xl border mb-2">
+      <textarea name="message" placeholder="Votre message" required class="w-full px-4 py-2 rounded-xl border mb-2"></textarea>
       <button type="submit" class="w-full bg-indigo-600 text-white px-4 py-2 rounded-xl hover:bg-indigo-700">
         Envoyer
       </button>
