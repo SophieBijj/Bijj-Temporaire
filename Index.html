@@ -3,71 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sophie Bijjani - Inspire, Exprime</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Sophie Bijjani - Site en création</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fdf6f0;
+      color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+    header {
+      width: 100%;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      background: transparent;
+      font-size: 1.5rem;
+    }
+    header a {
+      color: #1a1a1a;
+      transition: color 0.3s;
+    }
+    header a:hover {
+      color: #b0413e;
+    }
+    .portrait img {
+      width: 280px;
+      border-radius: 50%;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .form-section {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #e0d6cf;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      background: #b0413e;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      margin-top: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #c97b63;
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-br from-pink-200 via-red-200 to-yellow-200 min-h-screen flex flex-col items-center justify-center">
-  
-  <!-- Icônes en haut -->
-  <div class="absolute top-6 right-6 flex gap-4 text-2xl">
-    <a href="https://youtube.com/@bijjmusic" target="_blank" class="text-red-600 hover:text-red-700"><i class="fab fa-youtube"></i></a>
-    <a href="https://open.spotify.com/artist/2WcxpQ0zS7oqWxHllxPwIk" target="_blank" class="text-green-500 hover:text-green-600"><i class="fab fa-spotify"></i></a>
-    <a href="https://www.instagram.com/bijj.music" target="_blank" class="text-pink-500 hover:text-pink-600"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.deezer.com/artist/157537942" target="_blank" class="text-blue-500 hover:text-blue-600"><i class="fab fa-deezer"></i></a>
+<body>
+
+  <!-- Liens réseaux sociaux en haut -->
+  <header>
+    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/" target="_blank"><i class="fab fa-spotify"></i></a>
+    <a href="https://www.deezer.com/" target="_blank"><i class="fab fa-deezer"></i></a>
+  </header>
+
+  <!-- Portrait -->
+  <div class="portrait">
+    <img src="chasser.jpg" alt="Portrait Sophie Bijjani">
   </div>
 
-  <div class="bg-white/90 shadow-xl rounded-2xl p-10 max-w-2xl w-full text-center">
-    
-    <!-- Logo -->
-    <div class="flex justify-center mb-6">
-      <img src="logo.png" alt="Logo Sophie Bijjani" class="h-24">
-    </div>
+  <!-- Message principal -->
+  <h1>Bienvenue!</h1>
+  <p>Je suis en train de me refaire une beauté et une nouvelle identité artistique.</p>
 
-    <!-- Portrait -->
-    <div class="flex justify-center mb-6">
-      <img src="portrait.jpg" alt="Sophie Bijjani" 
-           class="w-56 h-56 rounded-full shadow-lg object-cover object-top">
-    </div>
-
-    <!-- Accroche -->
-    <h1 class="text-3xl font-bold mb-2">Sophie Bijjani</h1>
-    <h2 class="text-lg italic text-gray-600 mb-6">Inspire, exprime.</h2>
-    <p class="mb-8 text-gray-700 leading-relaxed">
-      Bienvenue sur mon site.<br>
-      Je suis en train de me refaire une beauté et une nouvelle identité artistique.<br>
-      En attendant, tu peux me retrouver ici.
-    </p>
-
-    <!-- Mailing list -->
-    <form name="newsletter" method="POST" data-netlify="true" class="mb-8">
-      <input type="hidden" name="form-name" value="newsletter">
-      <h3 class="text-xl font-semibold mb-2">🎤 Inspirations Vocales</h3>
-      <p class="text-sm text-gray-600 mb-4">
-        Recevez mes réflexions sur la voix, les dates d'ateliers et concerts,<br>
-        ainsi que quelques surprises musicales.
-      </p>
-      <div class="flex gap-2">
-        <input type="email" name="email" placeholder="Votre adresse email" required 
-               class="flex-1 px-4 py-2 rounded-xl border">
-        <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-xl hover:bg-purple-700">
-          S'abonner
-        </button>
-      </div>
-    </form>
-
-    <!-- Contact form -->
-    <form name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact">
-      <h3 class="text-xl font-semibold mb-2">Je reste disponible pour donner des ateliers & concerts</h3>
-      <input type="text" name="name" placeholder="Votre nom" required class="w-full px-4 py-2 rounded-xl border mb-2">
-      <input type="email" name="email" placeholder="Votre email" required class="w-full px-4 py-2 rounded-xl border mb-2">
-      <textarea name="message" placeholder="Votre message" required class="w-full px-4 py-2 rounded-xl border mb-2"></textarea>
-      <button type="submit" class="w-full bg-indigo-600 text-white px-4 py-2 rounded-xl hover:bg-indigo-700">
-        Envoyer
-      </button>
+  <!-- Mailing list -->
+  <div class="form-section">
+    <h2>Inspirations Vocales</h2>
+    <p>Recevez mes réflexions sur la voix, mes dates d’ateliers et concerts, ainsi que quelques surprises musicales.</p>
+    <form>
+      <input type="email" placeholder="Votre adresse email" required>
+      <button type="submit">S'abonner</button>
     </form>
   </div>
+
+  <!-- Contact -->
+  <div class="form-section">
+    <h2>Me contacter</h2>
+    <form>
+      <input type="text" placeholder="Votre nom" required>
+      <input type="email" placeholder="Votre email" required>
+      <textarea rows="4" placeholder="Votre message"></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2025 Sophie Bijjani - Tous droits réservés
+  </footer>
+
 </body>
 </html>
