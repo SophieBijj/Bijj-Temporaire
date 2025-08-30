@@ -108,8 +108,27 @@
       transition: background 0.3s;
       width: 100%;
     }
-    button:hover {
-      background: #c97b63;
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 15px;
+      border: 1px solid #c3e6cb;
+      font-size: 0.9rem;
+    }
+    .error-message {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 15px;
+      border: 1px solid #f5c6cb;
+      font-size: 0.9rem;
     }
     footer {
       margin-top: auto;
@@ -147,14 +166,21 @@
     <h2>Inspirations Vocales</h2>
     <p>Recevez mes réflexions sur la voix, mes dates d'ateliers et concerts, ainsi que quelques surprises musicales.</p>
     
-    <form name="newsletter" method="POST" data-netlify="true" action="/merci-newsletter.html">
+    <form name="newsletter" method="POST" data-netlify="true" id="newsletter-form">
       <!-- Champ honeypot caché pour protection anti-spam -->
       <p class="hidden">
         <label>Ne pas remplir si vous êtes humain: <input name="bot-field" /></label>
       </p>
       
       <input type="email" name="email" placeholder="Votre adresse email" required>
-      <button type="submit">S'abonner</button>
+      <button type="submit" id="newsletter-btn">S'abonner</button>
+      
+      <div class="success-message" id="newsletter-success" style="display: none;">
+        ✅ Merci ! Votre inscription a été prise en compte.
+      </div>
+      <div class="error-message" id="newsletter-error" style="display: none;">
+        ❌ Une erreur s'est produite. Veuillez réessayer.
+      </div>
     </form>
   </div>
   
@@ -162,7 +188,7 @@
   <div class="form-section">
     <h2>Me contacter</h2>
     
-    <form name="contact" method="POST" data-netlify="true" action="/merci-contact.html">
+    <form name="contact" method="POST" data-netlify="true" id="contact-form">
       <!-- Champ honeypot caché pour protection anti-spam -->
       <p class="hidden">
         <label>Ne pas remplir si vous êtes humain: <input name="bot-field" /></label>
@@ -171,12 +197,97 @@
       <input type="text" name="name" placeholder="Votre nom" required>
       <input type="email" name="email" placeholder="Votre email" required>
       <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
+      <button type="submit" id="contact-btn">Envoyer</button>
+      
+      <div class="success-message" id="contact-success" style="display: none;">
+        ✅ Merci ! Votre message a été envoyé avec succès.
+      </div>
+      <div class="error-message" id="contact-error" style="display: none;">
+        ❌ Une erreur s'est produite. Veuillez réessayer.
+      </div>
     </form>
   </div>
   
   <footer>
     © 2025 Sophie Bijjani - Tous droits réservés
   </footer>
+
+  <script>
+    // Gestion du formulaire de newsletter
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const button = document.getElementById('newsletter-btn');
+      const successMsg = document.getElementById('newsletter-success');
+      const errorMsg = document.getElementById('newsletter-error');
+      
+      // Désactiver le bouton pendant l'envoi
+      button.disabled = true;
+      button.textContent = 'Envoi en cours...';
+      
+      // Cacher les messages précédents
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      
+      // Envoyer les données
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        // Succès
+        successMsg.style.display = 'block';
+        form.reset();
+        button.textContent = 'S\'abonner';
+        button.disabled = false;
+      })
+      .catch(() => {
+        // Erreur
+        errorMsg.style.display = 'block';
+        button.textContent = 'S\'abonner';
+        button.disabled = false;
+      });
+    });
+    
+    // Gestion du formulaire de contact
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const button = document.getElementById('contact-btn');
+      const successMsg = document.getElementById('contact-success');
+      const errorMsg = document.getElementById('contact-error');
+      
+      // Désactiver le bouton pendant l'envoi
+      button.disabled = true;
+      button.textContent = 'Envoi en cours...';
+      
+      // Cacher les messages précédents
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      
+      // Envoyer les données
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        // Succès
+        successMsg.style.display = 'block';
+        form.reset();
+        button.textContent = 'Envoyer';
+        button.disabled = false;
+      })
+      .catch(() => {
+        // Erreur
+        errorMsg.style.display = 'block';
+        button.textContent = 'Envoyer';
+        button.disabled = false;
+      });
+    });
+  </script>
 </body>
 </html>
