@@ -60,6 +60,16 @@
       background: #fff;
       box-shadow: 0 6px 12px rgba(0,0,0,0.05);
     }
+    .form-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+    }
+    .form-section p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
     input, textarea {
       width: 100%;
       padding: 12px;
@@ -67,6 +77,12 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1rem;
+      box-sizing: border-box;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #b0413e;
+      box-shadow: 0 0 5px rgba(176, 65, 62, 0.3);
     }
     button {
       background: #b0413e;
@@ -79,9 +95,32 @@
       font-size: 1rem;
       font-weight: 500;
       transition: background 0.3s;
+      width: 100%;
     }
     button:hover {
       background: #c97b63;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 15px;
+      border: 1px solid #c3e6cb;
+      display: none;
+    }
+    .error-message {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 15px;
+      border: 1px solid #f5c6cb;
+      display: none;
     }
     footer {
       margin-top: auto;
@@ -89,10 +128,14 @@
       font-size: 0.9rem;
       color: #555;
     }
+    
+    /* Champ honeypot caché pour anti-spam */
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
-
   <!-- Liens réseaux sociaux en haut -->
   <header>
     <a href="https://www.instagram.com/sophiebijj" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -100,40 +143,149 @@
     <a href="https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/" target="_blank"><i class="fab fa-spotify"></i></a>
     <a href="https://www.deezer.com/en/artist/14124551" target="_blank"><i class="fab fa-deezer"></i></a>
   </header>
-
+  
   <!-- Portrait -->
   <div class="portrait">
     <img src="portrait.jpg" alt="Portrait Sophie Bijjani">
   </div>
-
+  
   <!-- Message principal -->
   <h1>Bienvenue!</h1>
   <p>Je suis en train de me refaire une beauté et une nouvelle identité. </p>
-
-  <!-- Mailing list -->
+  
+  <!-- Mailing list avec Netlify Forms -->
   <div class="form-section">
     <h2>Inspirations Vocales</h2>
-    <p>Recevez mes réflexions sur la voix, mes dates d’ateliers et concerts, ainsi que quelques surprises musicales.</p>
-    <form>
-      <input type="email" placeholder="Votre adresse email" required>
-      <button type="submit">S'abonner</button>
+    <p>Recevez mes réflexions sur la voix, mes dates d'ateliers et concerts, ainsi que quelques surprises musicales.</p>
+    
+    <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="newsletter-form">
+      <!-- Champ honeypot caché pour protection anti-spam -->
+      <p class="hidden">
+        <label>Ne pas remplir si vous êtes humain: <input name="bot-field" /></label>
+      </p>
+      
+      <!-- Champ caché pour identifier le formulaire -->
+      <input type="hidden" name="form-name" value="newsletter" />
+      
+      <input type="email" name="email" placeholder="Votre adresse email" required>
+      <button type="submit" id="newsletter-btn">S'abonner</button>
+      
+      <div class="success-message" id="newsletter-success">
+        ✅ Merci ! Votre inscription a été prise en compte.
+      </div>
+      <div class="error-message" id="newsletter-error">
+        ❌ Une erreur s'est produite. Veuillez réessayer.
+      </div>
     </form>
   </div>
-
-  <!-- Contact -->
+  
+  <!-- Contact avec Netlify Forms -->
   <div class="form-section">
     <h2>Me contacter</h2>
-    <form>
-      <input type="text" placeholder="Votre nom" required>
-      <input type="email" placeholder="Votre email" required>
-      <textarea rows="4" placeholder="Votre message"></textarea>
-      <button type="submit">Envoyer</button>
+    
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
+      <!-- Champ honeypot caché pour protection anti-spam -->
+      <p class="hidden">
+        <label>Ne pas remplir si vous êtes humain: <input name="bot-field" /></label>
+      </p>
+      
+      <!-- Champ caché pour identifier le formulaire -->
+      <input type="hidden" name="form-name" value="contact" />
+      
+      <input type="text" name="name" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+      <button type="submit" id="contact-btn">Envoyer</button>
+      
+      <div class="success-message" id="contact-success">
+        ✅ Merci ! Votre message a été envoyé avec succès.
+      </div>
+      <div class="error-message" id="contact-error">
+        ❌ Une erreur s'est produite. Veuillez réessayer.
+      </div>
     </form>
   </div>
-
+  
   <footer>
     © 2025 Sophie Bijjani - Tous droits réservés
   </footer>
 
+  <script>
+    // Gestion du formulaire de newsletter
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const button = document.getElementById('newsletter-btn');
+      const successMsg = document.getElementById('newsletter-success');
+      const errorMsg = document.getElementById('newsletter-error');
+      
+      // Désactiver le bouton pendant l'envoi
+      button.disabled = true;
+      button.textContent = 'Envoi en cours...';
+      
+      // Cacher les messages précédents
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      
+      // Envoyer les données
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        // Succès
+        successMsg.style.display = 'block';
+        form.reset();
+        button.textContent = 'S\'abonner';
+        button.disabled = false;
+      })
+      .catch(() => {
+        // Erreur
+        errorMsg.style.display = 'block';
+        button.textContent = 'S\'abonner';
+        button.disabled = false;
+      });
+    });
+    
+    // Gestion du formulaire de contact
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const button = document.getElementById('contact-btn');
+      const successMsg = document.getElementById('contact-success');
+      const errorMsg = document.getElementById('contact-error');
+      
+      // Désactiver le bouton pendant l'envoi
+      button.disabled = true;
+      button.textContent = 'Envoi en cours...';
+      
+      // Cacher les messages précédents
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      
+      // Envoyer les données
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        // Succès
+        successMsg.style.display = 'block';
+        form.reset();
+        button.textContent = 'Envoyer';
+        button.disabled = false;
+      })
+      .catch(() => {
+        // Erreur
+        errorMsg.style.display = 'block';
+        button.textContent = 'Envoyer';
+        button.disabled = false;
+      });
+    });
+  </script>
 </body>
 </html>
