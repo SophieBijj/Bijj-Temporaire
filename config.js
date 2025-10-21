@@ -67,6 +67,63 @@ const SITE_CONFIG = {
                     ]
                 }
             ],
+            pdfLien: "BIJJ_Spectacles.pdf",
+            pdfTexte: "📄 Télécharger le catalogue PDF",
+            temoignage: {
+                texte: "Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot.",
+                auteur: "Rush Creek Lodge",
+                titre: "Yosemite, California"
+            }
+        },
+        {
+            id: "espaces-rencontre",
+            symbole: "༅",
+            titre: "Espaces de rencontre",
+            soustitre: "Ateliers circlesong • Cercles de chant • Facilitation de groupe",
+            description: "Je crée le cadre sécuritaire où le groupe co-crée. Des espaces d'exploration collective où chaque voix trouve sa place.",
+            sections: [
+                {
+                    categorie: "Ateliers de groupe",
+                    items: [
+                        "Flow Musical (1h30, tous niveaux) - Musique vocale et corporelle improvisée",
+                        "Circlesong 101 (4×3h, intermédiaire) - Fondements de la circlesong",
+                        "Bases Musicales en Impro Vocale (3h, débutants) - Par où commencer",
+                        "Corps Sonores (2h, tous niveaux) - Approche somatique"
+                    ]
+                }
+            ],
+            pdfLien: "BIJJ_Ateliers_PRÉSENTATION.pdf",
+            pdfTexte: "📄 Télécharger le catalogue d'ateliers PDF",
+            temoignage: {
+                texte: "L'atelier m'a aidée à comprendre comment improviser vocalement et comment les impros peuvent être structurées, le tout dans une atmosphère accueillante, amicale et sans pression.",
+                auteur: "Amélie C."
+            }
+        },
+        {
+            id: "accompagnement",
+            symbole: "❋",
+            titre: "Accompagnement",
+            soustitre: "Exploration vocale • Technique • Libération • Création",
+            description: "Je t'accompagne dans ton propre déploiement. Un espace privilégié pour explorer ta voix dans une approche holistique corps-cœur-esprit.",
+            sections: [
+                {
+                    categorie: "Accompagnement individuel",
+                    items: [
+                        "Exploration somatique liée à la voix",
+                        "Technique vocale adaptée à vos besoins",
+                        "Composition et création musicale",
+                        "Clarté de la voix dans une approche holistique",
+                        "Libération de blocages émotionnels"
+                    ]
+                }
+            ],
+            temoignage: {
+                texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
+                auteur: "Participant",
+                titre: "Festival du Cercle Enchanté"
+            }
+        }
+    ],
 
     // Musique (section intégrée)
     musique: {
@@ -145,60 +202,3 @@ const SITE_CONFIG = {
         copyright: "2025 Sophie Bijjani. Inspire ༅ Exprime - Tous droits réservés."
     }
 };
-            pdfLien: "BIJJ_Spectacles.pdf",
-            pdfTexte: "📄 Télécharger le catalogue PDF",
-            temoignage: {
-                texte: "Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot.",
-                auteur: "Rush Creek Lodge",
-                titre: "Yosemite, California"
-            }
-        },
-        {
-            id: "espaces-rencontre",
-            symbole: "༅",
-            titre: "Espaces de rencontre",
-            soustitre: "Ateliers circlesong • Cercles de chant • Facilitation de groupe",
-            description: "Je crée le cadre sécuritaire où le groupe co-crée. Des espaces d'exploration collective où chaque voix trouve sa place.",
-            sections: [
-                {
-                    categorie: "Ateliers de groupe",
-                    items: [
-                        "Flow Musical (1h30, tous niveaux) - Musique vocale et corporelle improvisée",
-                        "Circlesong 101 (4×3h, intermédiaire) - Fondements de la circlesong",
-                        "Bases Musicales en Impro Vocale (3h, débutants) - Par où commencer",
-                        "Corps Sonores (2h, tous niveaux) - Approche somatique"
-                    ]
-                }
-            ],
-            pdfLien: "BIJJ_Ateliers_PRÉSENTATION.pdf",
-            pdfTexte: "📄 Télécharger le catalogue d'ateliers PDF",
-            temoignage: {
-                texte: "L'atelier m'a aidée à comprendre comment improviser vocalement et comment les impros peuvent être structurées, le tout dans une atmosphère accueillante, amicale et sans pression.",
-                auteur: "Amélie C."
-            }
-        },
-        {
-            id: "accompagnement",
-            symbole: "❋",
-            titre: "Accompagnement",
-            soustitre: "Exploration vocale • Technique • Libération • Création",
-            description: "Je t'accompagne dans ton propre déploiement. Un espace privilégié pour explorer ta voix dans une approche holistique corps-cœur-esprit.",
-            sections: [
-                {
-                    categorie: "Accompagnement individuel",
-                    items: [
-                        "Exploration somatique liée à la voix",
-                        "Technique vocale adaptée à vos besoins",
-                        "Composition et création musicale",
-                        "Clarté de la voix dans une approche holistique",
-                        "Libération de blocages émotionnels"
-                    ]
-                }
-            ],
-            temoignage: {
-                texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
-                auteur: "Participant",
-                titre: "Festival du Cercle Enchanté"
-            }
-        }
-    ],
