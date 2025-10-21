@@ -1,3 +1,75 @@
+// ===== APP.JS - SOPHIE BIJJANI SITE =====
+
+// État global
+let animationComplete = false;
+
+// ===== INITIALISATION =====
+document.addEventListener('DOMContentLoaded', () => {
+    initHero();
+    initPhilosophie();
+    initUniversGrid();
+    initMusique();
+    initCTACollaboration();
+    initTestimonials();
+    initMenu();
+    initFooter();
+    initScrollBehavior();
+    initSmoothScrolling();
+});
+
+// ===== HERO ANIMATION =====
+function initHero() {
+    const wrapper = document.getElementById('heroAnimation');
+    
+    // Ligne INSPIRE
+    const lineInspire = document.createElement('div');
+    lineInspire.className = 'line-inspire';
+    const inspire = SITE_CONFIG.hero.mot1;
+    
+    inspire.split('').forEach((char, i) => {
+        const span = document.createElement('span');
+        span.className = (char.toLowerCase() === 'i') ? 'letter i-inspire' : 'letter';
+        span.textContent = char;
+        lineInspire.appendChild(span);
+    });
+    
+    // Ligne EXPRIME (commence invisible)
+    const lineExprime = document.createElement('div');
+    lineExprime.className = 'line-exprime';
+    const exprime = SITE_CONFIG.hero.mot2;
+    
+    exprime.split('').forEach((char, i) => {
+        const span = document.createElement('span');
+        span.className = (char.toLowerCase() === 'i') ? 'letter i-exprime' : 'letter';
+        span.textContent = char;
+        lineExprime.appendChild(span);
+    });
+    
+    wrapper.appendChild(lineInspire);
+    wrapper.appendChild(lineExprime);
+    
+    // Détection du scroll pour animation EXPRIME
+    let exprimeAnimated = false;
+    window.addEventListener('scroll', () => {
+        if (!exprimeAnimated && window.scrollY > 50) {
+            animateExprime();
+            exprimeAnimated = true;
+            animationComplete = true;
+            document.getElementById('header').classList.add('animation-complete');
+            document.querySelector('.scroll-indicator').style.display = 'flex';
+        }
+    });
+}
+
+function animateExprime() {
+    const letters = document.querySelectorAll('.line-exprime .letter');
+    letters.forEach((letter, i) => {
+        setTimeout(() => {
+            letter.classList.add('visible');
+        }, i * 80);
+    });
+}
+
 // ===== PHILOSOPHIE =====
 function initPhilosophie() {
     document.getElementById('philosophieTitre').textContent = SITE_CONFIG.philosophie.titre;
@@ -307,79 +379,12 @@ function initSmoothScrolling() {
 }
 
 // ===== LOGO SCROLL TO TOP =====
-document.getElementById('logoLink').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});===== APP.JS - SOPHIE BIJJANI SITE =====
-
-// État global
-let animationComplete = false;
-
-// ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', () => {
-    initHero();
-    initPhilosophie();
-    initUniversGrid();
-    initMusique();
-    initCTACollaboration();
-    initTestimonials();
-    initMenu();
-    initFooter();
-    initScrollBehavior();
-    initSmoothScrolling();
+    const logoLink = document.getElementById('logoLink');
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });
-
-// ===== HERO ANIMATION =====
-function initHero() {
-    const wrapper = document.getElementById('heroAnimation');
-    
-    // Ligne INSPIRE
-    const lineInspire = document.createElement('div');
-    lineInspire.className = 'line-inspire';
-    const inspire = SITE_CONFIG.hero.mot1;
-    
-    inspire.split('').forEach((char, i) => {
-        const span = document.createElement('span');
-        span.className = (char.toLowerCase() === 'i') ? 'letter i-inspire' : 'letter';
-        span.textContent = char;
-        lineInspire.appendChild(span);
-    });
-    
-    // Ligne EXPRIME (commence invisible)
-    const lineExprime = document.createElement('div');
-    lineExprime.className = 'line-exprime';
-    const exprime = SITE_CONFIG.hero.mot2;
-    
-    exprime.split('').forEach((char, i) => {
-        const span = document.createElement('span');
-        span.className = (char.toLowerCase() === 'i') ? 'letter i-exprime' : 'letter';
-        span.textContent = char;
-        lineExprime.appendChild(span);
-    });
-    
-    wrapper.appendChild(lineInspire);
-    wrapper.appendChild(lineExprime);
-    
-    // Détection du scroll pour animation EXPRIME
-    let exprimeAnimated = false;
-    window.addEventListener('scroll', () => {
-        if (!exprimeAnimated && window.scrollY > 50) {
-            animateExprime();
-            exprimeAnimated = true;
-            animationComplete = true;
-            document.getElementById('header').classList.add('animation-complete');
-            document.querySelector('.scroll-indicator').style.display = 'flex';
-        }
-    });
-}
-
-function animateExprime() {
-    const letters = document.querySelectorAll('.line-exprime .letter');
-    letters.forEach((letter, i) => {
-        setTimeout(() => {
-            letter.classList.add('visible');
-        }, i * 80);
-    });
-}
-
-//
