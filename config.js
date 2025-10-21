@@ -67,6 +67,84 @@ const SITE_CONFIG = {
                     ]
                 }
             ],
+
+    // Musique (section intégrée)
+    musique: {
+        titre: "Ma Musique",
+        spotifyAlbum: {
+            titre: 'Album "Feu d\'grand vent"',
+            id: "7a0fS2k5bagVzAGGyLxVNf"
+        },
+        videos: [
+            {
+                id: "phUMrUfYd2c",
+                titre: "Composition originale",
+                description: "Découvrez mes créations musicales originales"
+            },
+            {
+                id: "RRzKRhQC1TA",
+                titre: "Reprise revisitée",
+                description: "Grands classiques, version Bijj"
+            }
+        ],
+        ctaYoutube: "Découvrir plus sur YouTube"
+    },
+
+    // CTA Collaboration
+    ctaCollaboration: {
+        titre: "L'inspiration vient en jouant!",
+        description: "Que vous ayez une vision claire ou simplement une étincelle d'idée, parlons-en. La nature de mon travail est de m'adapter à vos besoins. Conférence inspirante ? Spectacle sur mesure ? Atelier de cohésion d'équipe ? Cercle de chant pour votre communauté ? Discutons de ce qui résonne pour vous.",
+        boutonTexte: "Alors, on joue ?"
+    },
+
+    // Témoignages
+    temoignages: [
+        {
+            texte: "Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot.",
+            auteur: "Rush Creek Lodge",
+            titre: "Yosemite, California"
+        },
+        {
+            texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
+            auteur: "Participant",
+            titre: "Festival du Cercle Enchanté"
+        }
+    ],
+
+    // Photos
+    photos: {
+        quote: "PhotoQuote.jpg"
+    },
+
+    // Newsletter (intégrée au footer)
+    newsletter: {
+        titre: "Restez inspirés",
+        description: "Recevez mes actualités créatives, découvrez mes prochains concerts et explorez avec moi l'univers de l'expression vocale."
+    },
+
+    // Liens
+    liens: {
+        contact: "https://docs.google.com/forms/d/e/1FAIpQLScVyGLATRRlaKO5cdvQBqITP71xnL9Ahgj4SkxXt-Sed5sCDw/viewform?usp=dialog",
+        instagram: "https://www.instagram.com/sophiebijj",
+        youtube: "https://www.youtube.com/c/SophieBijjani",
+        spotify: "https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/",
+        deezer: "https://www.deezer.com/en/artist/14124551",
+        appleMusic: "https://music.apple.com/artist/sophie-bijjani"
+    },
+
+    // MENU DE NAVIGATION (simplifié - ancres de scroll)
+    navigation: [
+        { nom: "Accueil", ancre: "#hero" },
+        { nom: "Mes univers", ancre: "#univers" },
+        { nom: "Musique", ancre: "#musique" },
+        { nom: "Contact", lien: "https://docs.google.com/forms/d/e/1FAIpQLScVyGLATRRlaKO5cdvQBqITP71xnL9Ahgj4SkxXt-Sed5sCDw/viewform?usp=dialog" }
+    ],
+
+    // FOOTER
+    footer: {
+        copyright: "2025 Sophie Bijjani. Inspire ༅ Exprime - Tous droits réservés."
+    }
+};
             pdfLien: "BIJJ_Spectacles.pdf",
             pdfTexte: "📄 Télécharger le catalogue PDF",
             temoignage: {
