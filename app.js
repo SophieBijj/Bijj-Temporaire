@@ -29,7 +29,8 @@ function initHero() {
     
     inspire.split('').forEach((char, i) => {
         const span = document.createElement('span');
-        span.className = (char.toLowerCase() === 'i') ? 'letter i-inspire' : 'letter';
+        // Seul le 2e "i" (index 4 dans "Inspire") doit être outline
+        span.className = (i === 4 && char.toLowerCase() === 'i') ? 'letter i-inspire' : 'letter';
         span.textContent = char;
         lineInspire.appendChild(span);
     });
@@ -102,7 +103,6 @@ function initScrollHijacking() {
                 animationComplete = true;
                 document.body.style.overflow = 'auto';
                 document.getElementById('header').classList.add('animation-complete');
-                document.querySelector('.scroll-indicator').style.display = 'flex';
             }, 200);
         }
     }
