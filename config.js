@@ -13,7 +13,7 @@ const SITE_CONFIG = {
     // Philosophie (nouvelle section après hero)
     philosophie: {
         titre: "Créatrice d'espaces authentiques",
-        texte: "Je crée des espaces où les voix se rencontrent et où l'authenticité devient spectacle. Que ce soit sur scène, en cercle ou en accompagnement individuel, je m'adapte à votre vision pour créer des moments de connexion réels."
+        texte: "Je crée des espaces où les voix se rencontrent, où l'authenticité est au cœur de l'expérience. Que ce soit sur scène, en cercle ou en accompagnement individuel, je m'adapte à votre vision pour créer des moments d'expression et de connexion."
     },
 
     // Mes Univers (remplace "activités")
@@ -199,6 +199,6 @@ const SITE_CONFIG = {
 
     // FOOTER
     footer: {
-        copyright: "2025 Sophie Bijjani. Inspire ༅ Exprime - Tous droits réservés."
+        copyright: "Fait avec amour et concentration\n2025 Sophie Bijjani. Inspire ༅ Exprime - Tous droits réservés."
     }
 };
