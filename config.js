@@ -22,7 +22,7 @@ const SITE_CONFIG = {
             id: "voix-scene",
             symbole: "🎤",
             titre: "Au Micro",
-            soustitre: "Spectacles • Maître de cérémonie • Conférences",
+            soustitre: "Spectacles • Conférences • Maître de cérémonie",
             description: "Je porte l'énergie et guide l'expérience en spectacle ou pour animer votre évènement. ",
             sections: [
                 {
@@ -80,7 +80,7 @@ const SITE_CONFIG = {
             symbole: "༅",
             titre: "Espaces de rencontre",
             soustitre: "Ateliers circlesong • Cercles de chant • Facilitation de groupe",
-            description: "Je crée le cadre sécuritaire où le groupe co-crée. Des espaces d'exploration collective où chaque voix trouve sa place.",
+            description: "J'offre un cadre sensible qui favorise l'émergence d'espaces d'exploration collective où chaque voix trouve sa place.",
             sections: [
                 {
                     categorie: "Ateliers de groupe",
@@ -150,8 +150,8 @@ const SITE_CONFIG = {
     // CTA Collaboration
     ctaCollaboration: {
         titre: "L'inspiration vient en jouant!",
-        description: "Que vous ayez une vision claire ou simplement une étincelle d'idée, parlons-en. La nature de mon travail est de m'adapter à vos besoins. Conférence inspirante ? Spectacle sur mesure ? Atelier de cohésion d'équipe ? Cercle de chant pour votre communauté ? Discutons de ce qui résonne pour vous.",
-        boutonTexte: "Alors, on joue ?"
+        description: "La nature de mon travail est de m'adapter à vos besoins. Conférence inspirante ? Spectacle sur mesure ? Atelier de cohésion d'équipe ?  Discutons de ce qui résonne pour vous, que vous ayez une vision claire ou simplement une étincelle d'idée.",
+        boutonTexte: "Parlons-en!"
     },
 
     // Témoignages
