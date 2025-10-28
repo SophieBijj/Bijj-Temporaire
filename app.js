@@ -1,6 +1,7 @@
 // ===== APP.JS - SOPHIE BIJJANI SITE =====
 
 // État global
+let animationTriggered = false;
 let animationComplete = false;
 
 // ===== INITIALISATION =====
@@ -48,26 +49,63 @@ function initHero() {
     wrapper.appendChild(lineInspire);
     wrapper.appendChild(lineExprime);
     
-    // Détection du scroll pour animation EXPRIME
-    let exprimeAnimated = false;
-    window.addEventListener('scroll', () => {
-        if (!exprimeAnimated && window.scrollY > 50) {
-            animateExprime();
-            exprimeAnimated = true;
-            animationComplete = true;
-            document.getElementById('header').classList.add('animation-complete');
-            document.querySelector('.scroll-indicator').style.display = 'flex';
-        }
-    });
+    // Initialiser le scroll hijacking
+    initScrollHijacking();
 }
 
-function animateExprime() {
-    const letters = document.querySelectorAll('.line-exprime .letter');
-    letters.forEach((letter, i) => {
-        setTimeout(() => {
-            letter.classList.add('visible');
-        }, i * 80);
-    });
+// ===== ANIMATION AUTOMATIQUE AVEC SCROLL HIJACKING =====
+function initScrollHijacking() {
+    const exprimeContainer = document.querySelector('.line-exprime');
+    const letterSpans = exprimeContainer.querySelectorAll('.letter');
+    let currentIndex = 0;
+
+    // Bloquer le scroll dès le chargement
+    document.body.style.overflow = 'hidden';
+
+    // Attendre 0.6 seconde puis démarrer "exprime"
+    setTimeout(() => {
+        startAnimation();
+    }, 600);
+
+    function setupScrollBlocker() {
+        function handleWheelOrTouch(e) {
+            if (!animationComplete) {
+                e.preventDefault();
+            }
+        }
+
+        window.addEventListener('wheel', handleWheelOrTouch, { passive: false });
+        window.addEventListener('touchmove', handleWheelOrTouch, { passive: false });
+        window.addEventListener('keydown', (e) => {
+            if (!animationComplete && [32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    }
+
+    function startAnimation() {
+        if (animationTriggered) return;
+        
+        animationTriggered = true;
+        setupScrollBlocker();
+        
+        typeNextLetter();
+    }
+
+    function typeNextLetter() {
+        if (currentIndex < letterSpans.length) {
+            letterSpans[currentIndex].classList.add('visible');
+            currentIndex++;
+            setTimeout(typeNextLetter, 80);
+        } else {
+            setTimeout(() => {
+                animationComplete = true;
+                document.body.style.overflow = 'auto';
+                document.getElementById('header').classList.add('animation-complete');
+                document.querySelector('.scroll-indicator').style.display = 'flex';
+            }, 200);
+        }
+    }
 }
 
 // ===== PHILOSOPHIE =====
