@@ -175,8 +175,8 @@ const SITE_CONFIG = {
 
     // Newsletter (intégrée au footer)
     newsletter: {
-        titre: "Restez inspirés",
-        description: "Recevez mes actualités créatives, découvrez mes prochains concerts et explorez avec moi l'univers de l'expression vocale."
+        titre: "Zone de risque!",
+        description: "Tu pourrais faire partie des premières personnes que j’informe des nouvelles initiatives qui germent de mon côté, et ce, jusqu’à trois fois par année. C’est risqué! "
     },
 
     // Liens
