@@ -21,9 +21,9 @@ const SITE_CONFIG = {
         {
             id: "voix-scene",
             symbole: "🎤",
-            titre: "Voix en scène",
-            soustitre: "Spectacles • Conférences • MC de galas & festivals",
-            description: "Je porte l'énergie et guide l'expérience, que ce soit en chantant, en parlant ou en animant votre événement.",
+            titre: "Au Micro",
+            soustitre: "Spectacles • Maître de cérémonie • Conférences",
+            description: "Je porte l'énergie et guide l'expérience en spectacle ou pour animer votre évènement. ",
             sections: [
                 {
                     categorie: "En spectacle",
