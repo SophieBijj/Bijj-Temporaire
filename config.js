@@ -1,204 +1,1344 @@
-// ===== CONFIGURATION ÉDITABLE =====
-const SITE_CONFIG = {
-    // Informations générales
-    nom: "Sophie Bijjani",
-    tagline: "Inspire ༅ Exprime",
-    
-    // Hero section
-    hero: {
-        mot1: "Inspire",
-        mot2: "exprime"
-    },
+/* ===== STYLES DU SITE SOPHIE BIJJANI - VERSION COMBINÉE ===== */
 
-    // Philosophie (nouvelle section après hero)
-    philosophie: {
-        titre: "Créatrice d'espaces authentiques",
-        texte: "Je crée des espaces où les voix se rencontrent et où l'authenticité devient spectacle. Que ce soit sur scène, en cercle ou en accompagnement individuel, je m'adapte à votre vision pour créer des moments de connexion réels."
-    },
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
-    // Mes Univers (remplace "activités")
-    univers: [
-        {
-            id: "voix-scene",
-            symbole: "🎤",
-            titre: "Voix en scène",
-            soustitre: "Spectacles • Conférences • MC de galas & festivals",
-            description: "Je porte l'énergie et guide l'expérience, que ce soit en chantant, en parlant ou en animant votre événement.",
-            sections: [
-                {
-                    categorie: "En spectacle",
-                    items: [
-                        {
-                            titre: "Mosaïque Mainstream ༄",
-                            description: "Une fresque musicale aux mille reflets : des chansons qui ont traversé frontières et générations, de Dalida à Metallica.",
-                            meta: "Solo intimiste • Ambiance café-concert • Répertoire multilingue"
-                        },
-                        {
-                            titre: "À la carte : Jukebox Humain ༅",
-                            description: "Vous programmez, Sophie joue ! Un concert sur mesure où le public compose sa playlist en direct.",
-                            meta: "Concert interactif • Playlist live • Animation participative"
-                        },
-                        {
-                            titre: "Rouge Somptueux : Compositions ༄",
-                            description: "Plongée intime et poétique dans mes compositions originales qui explorent les nuances de l'expérience humaine.",
-                            meta: "Créations originales • Univers poétique • Concert intime"
-                        },
-                        {
-                            titre: "Chœur ouvert : Chants de reliance ༅",
-                            description: "Chansons glanées au fil de mes voyages. Un moment de connexion collective où les voix se joignent.",
-                            meta: "Expérience participative • Chants de différentes traditions • Cercles"
-                        }
-                    ]
-                },
-                {
-                    categorie: "En parole",
-                    items: [
-                        "Conférences sur la créativité",
-                        "Conférences sur l'empuissancement",
-                        "Keynotes inspirants pour événements"
-                    ]
-                },
-                {
-                    categorie: "En animation",
-                    items: [
-                        "Maître de cérémonie pour galas corporatifs",
-                        "Porte-parole de festivals",
-                        "Animation de conférences"
-                    ]
-                }
-            ],
-            pdfLien: "BIJJ_Spectacles.pdf",
-            pdfTexte: "📄 Télécharger le catalogue PDF",
-            temoignage: {
-                texte: "Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot.",
-                auteur: "Rush Creek Lodge",
-                titre: "Yosemite, California"
-            }
-        },
-        {
-            id: "espaces-rencontre",
-            symbole: "༅",
-            titre: "Espaces de rencontre",
-            soustitre: "Ateliers circlesong • Cercles de chant • Facilitation de groupe",
-            description: "Je crée le cadre sécuritaire où le groupe co-crée. Des espaces d'exploration collective où chaque voix trouve sa place.",
-            sections: [
-                {
-                    categorie: "Ateliers de groupe",
-                    items: [
-                        "Flow Musical (1h30, tous niveaux) - Musique vocale et corporelle improvisée",
-                        "Circlesong 101 (4×3h, intermédiaire) - Fondements de la circlesong",
-                        "Bases Musicales en Impro Vocale (3h, débutants) - Par où commencer",
-                        "Corps Sonores (2h, tous niveaux) - Approche somatique"
-                    ]
-                }
-            ],
-            pdfLien: "BIJJ_Ateliers_PRÉSENTATION.pdf",
-            pdfTexte: "📄 Télécharger le catalogue d'ateliers PDF",
-            temoignage: {
-                texte: "L'atelier m'a aidée à comprendre comment improviser vocalement et comment les impros peuvent être structurées, le tout dans une atmosphère accueillante, amicale et sans pression.",
-                auteur: "Amélie C."
-            }
-        },
-        {
-            id: "accompagnement",
-            symbole: "❋",
-            titre: "Accompagnement",
-            soustitre: "Exploration vocale • Technique • Libération • Création",
-            description: "Je t'accompagne dans ton propre déploiement. Un espace privilégié pour explorer ta voix dans une approche holistique corps-cœur-esprit.",
-            sections: [
-                {
-                    categorie: "Accompagnement individuel",
-                    items: [
-                        "Exploration somatique liée à la voix",
-                        "Technique vocale adaptée à vos besoins",
-                        "Composition et création musicale",
-                        "Clarté de la voix dans une approche holistique",
-                        "Libération de blocages émotionnels"
-                    ]
-                }
-            ],
-            temoignage: {
-                texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
-                auteur: "Participant",
-                titre: "Festival du Cercle Enchanté"
-            }
-        }
-    ],
+:root {
+    --gris-anthracite: #2d2d3a;
+    --rose-froid: #b85c7a;
+    --gris-perle: #ececec;
+    --blanc: #ffffff;
+    --texte: #2d2d3a;
+}
 
-    // Musique (section intégrée)
-    musique: {
-        titre: "Ma Musique",
-        spotifyAlbum: {
-            titre: 'Album "Feu d\'grand vent"',
-            id: "7a0fS2k5bagVzAGGyLxVNf"
-        },
-        videos: [
-            {
-                id: "phUMrUfYd2c",
-                titre: "Composition originale",
-                description: "Découvrez mes créations musicales originales"
-            },
-            {
-                id: "RRzKRhQC1TA",
-                titre: "Reprise revisitée",
-                description: "Grands classiques, version Bijj"
-            }
-        ],
-        ctaYoutube: "Découvrir plus sur YouTube"
-    },
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    // CTA Collaboration
-    ctaCollaboration: {
-        titre: "L'inspiration vient en jouant!",
-        description: "Que vous ayez une vision claire ou simplement une étincelle d'idée, parlons-en. La nature de mon travail est de m'adapter à vos besoins. Conférence inspirante ? Spectacle sur mesure ? Atelier de cohésion d'équipe ? Cercle de chant pour votre communauté ? Discutons de ce qui résonne pour vous.",
-        boutonTexte: "Alors, on joue ?"
-    },
+body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    line-height: 1.6;
+    color: var(--texte);
+    background: var(--blanc);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 
-    // Témoignages
-    temoignages: [
-        {
-            texte: "Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot.",
-            auteur: "Rush Creek Lodge",
-            titre: "Yosemite, California"
-        },
-        {
-            texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
-            auteur: "Participant",
-            titre: "Festival du Cercle Enchanté"
-        }
-    ],
+/* ===== HEADER (V1) ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
 
-    // Photos
-    photos: {
-        quote: "PhotoQuote.jpg"
-    },
+.header.scrolled {
+    border-bottom: 1px solid rgba(226, 232, 240, 0.3) !important;
+}
 
-    // Newsletter (intégrée au footer)
-    newsletter: {
-        titre: "Restez inspirés",
-        description: "Recevez mes actualités créatives, découvrez mes prochains concerts et explorez avec moi l'univers de l'expression vocale."
-    },
+.header.animation-complete {
+    border-bottom: 1px solid rgba(226, 232, 240, 0.3) !important;
+}
 
-    // Liens
-    liens: {
-        contact: "https://docs.google.com/forms/d/e/1FAIpQLScVyGLATRRlaKO5cdvQBqITP71xnL9Ahgj4SkxXt-Sed5sCDw/viewform?usp=dialog",
-        instagram: "https://www.instagram.com/sophiebijj",
-        youtube: "https://www.youtube.com/c/SophieBijjani",
-        spotify: "https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/",
-        deezer: "https://www.deezer.com/en/artist/14124551",
-        appleMusic: "https://music.apple.com/artist/sophie-bijjani"
-    },
+.logo {
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--texte);
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+}
 
-    // MENU DE NAVIGATION (simplifié - ancres de scroll)
-    navigation: [
-        { nom: "Accueil", ancre: "#hero" },
-        { nom: "Mes univers", ancre: "#univers" },
-        { nom: "Musique", ancre: "#musique" },
-        { nom: "Contact", lien: "https://docs.google.com/forms/d/e/1FAIpQLScVyGLATRRlaKO5cdvQBqITP71xnL9Ahgj4SkxXt-Sed5sCDw/viewform?usp=dialog" }
-    ],
+.logo span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
 
-    // FOOTER
-    footer: {
-        copyright: "2025 Sophie Bijjani. Inspire ༅ Exprime - Tous droits réservés."
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-3px); }
+    75% { transform: translateY(3px); }
+}
+
+.logo .j-gold {
+    color: var(--rose-froid);
+    font-weight: 700;
+}
+
+.logo .i-bold {
+    font-weight: 700;
+    color: var(--texte);
+}
+
+/* ===== MENU BUTTON (V1) ===== */
+.menu-button {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 28px;
+    color: var(--texte);
+    cursor: pointer;
+    display: inline-flex;
+    gap: 0;
+    padding: 10px 0;
+}
+
+.menu-letter {
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    overflow: hidden;
+    width: auto;
+}
+
+.menu-letter-content {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    position: relative;
+}
+
+.menu-letter-content span {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+}
+
+.menu-button:hover .letter-1 .menu-letter-content { transform: translateY(-35px); transition-delay: 0s; }
+.menu-button:hover .letter-2 .menu-letter-content { transform: translateY(-35px); transition-delay: 0.05s; }
+.menu-button:hover .letter-3 .menu-letter-content { transform: translateY(-35px); transition-delay: 0.1s; }
+.menu-button:hover .letter-4 .menu-letter-content { transform: translateY(-35px); transition-delay: 0.15s; }
+.menu-button:hover .letter-5 .menu-letter-content { transform: translateY(-35px); transition-delay: 0.2s; }
+.menu-button:hover .letter-6 .menu-letter-content { transform: translateY(-35px); transition-delay: 0.25s; }
+
+/* ===== MENU OVERLAY (V1) ===== */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gris-anthracite);
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.6s;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.menu-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 40px;
+    color: #e2e8f0;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-close:hover {
+    transform: rotate(90deg);
+    color: var(--rose-froid);
+}
+
+.menu-content {
+    text-align: center;
+    max-width: 400px;
+}
+
+.menu-nav {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.menu-nav li {
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1), transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.menu-overlay.active .menu-nav li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-overlay.active .menu-nav li:nth-child(1) { transition-delay: 0.1s; }
+.menu-overlay.active .menu-nav li:nth-child(2) { transition-delay: 0.2s; }
+.menu-overlay.active .menu-nav li:nth-child(3) { transition-delay: 0.3s; }
+.menu-overlay.active .menu-nav li:nth-child(4) { transition-delay: 0.4s; }
+
+.menu-nav a {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 48px;
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    padding-right: 60px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.menu-nav a::after {
+    content: '༅';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    font-size: 36px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    color: var(--rose-froid);
+}
+
+.menu-nav a:hover {
+    color: var(--rose-froid);
+}
+
+.menu-nav a:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    animation: infinityFloat 1.5s ease-in-out infinite;
+}
+
+@keyframes infinityFloat {
+    0%, 100% { transform: translateY(-50%) translateX(0) rotate(0deg); }
+    50% { transform: translateY(-50%) translateX(5px) rotate(10deg); }
+}
+
+.menu-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1), transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.menu-overlay.active .menu-social {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+.menu-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #e2e8f0;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.menu-social a:hover {
+    border-color: var(--rose-froid);
+    color: var(--rose-froid);
+    transform: translateY(-3px);
+}
+
+/* ===== HERO SECTION (V1) ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--blanc) 0%, var(--gris-perle) 100%);
+    padding: 100px 20px 50px;
+}
+
+.hero-content {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.animation-wrapper {
+    position: relative;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #718096;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.scroll-indicator-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid #718096;
+    border-bottom: 2px solid #718096;
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: rotate(45deg) translateY(0);
     }
-};
+    40% {
+        transform: rotate(45deg) translateY(-10px);
+    }
+    60% {
+        transform: rotate(45deg) translateY(-5px);
+    }
+}
+
+/* ===== INSPIRE - Animation au chargement (V1) ===== */
+.line-inspire {
+    font-size: 110px;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--texte);
+}
+
+.line-inspire .letter {
+    display: inline-block;
+    opacity: 0;
+    color: var(--texte);
+}
+
+.line-inspire .i-inspire {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px var(--texte);
+    opacity: 0;
+}
+
+@keyframes fadeInFromCenter {
+    0% { opacity: 0; transform: scale(0.7); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.line-inspire .i-inspire {
+    animation: fadeInFromCenter 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.line-inspire .letter:nth-child(4),
+.line-inspire .letter:nth-child(6) {
+    animation: fadeInFromCenter 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.05s;
+}
+
+.line-inspire .letter:nth-child(3),
+.line-inspire .letter:nth-child(7) {
+    animation: fadeInFromCenter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+.line-inspire .letter:nth-child(2) {
+    animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.15s;
+}
+
+.line-inspire .letter:nth-child(1) {
+    animation: fadeInFromCenter 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+/* ===== EXPRIME - Commence invisible, animation automatique (V1) ===== */
+.line-exprime {
+    font-size: 110px;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    margin-left: 40px;
+    margin-top: 10px;
+    min-height: 110px;
+}
+
+.line-exprime .letter {
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+    color: var(--texte);
+}
+
+.line-exprime .letter.visible {
+    animation: typeIn 0.3s ease forwards;
+}
+
+.line-exprime .letter.i-exprime {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px var(--rose-froid);
+}
+
+@keyframes typeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ===== PHILOSOPHIE (V2) ===== */
+.philosophie {
+    padding: 100px 40px;
+    text-align: center;
+    background: var(--blanc);
+}
+
+.philosophie h2 {
+    font-size: 42px;
+    color: var(--texte);
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.philosophie p {
+    font-size: 22px;
+    color: #718096;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ===== MES UNIVERS (V2) ===== */
+.mes-univers {
+    padding: 100px 40px;
+    background: var(--gris-perle);
+}
+
+.mes-univers h2 {
+    font-size: 48px;
+    color: var(--texte);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.univers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.univers-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.univers-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.univers-card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.univers-symbole {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.univers-card h3 {
+    font-size: 32px;
+    color: var(--texte);
+    margin-bottom: 10px;
+}
+
+.univers-soustitre {
+    font-size: 16px;
+    color: #718096;
+    font-style: italic;
+}
+
+.univers-description {
+    font-size: 18px;
+    color: #718096;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.univers-toggle {
+    width: 100%;
+    padding: 15px 30px;
+    background: var(--rose-froid);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.univers-toggle:hover {
+    background: var(--gris-anthracite);
+    transform: translateY(-2px);
+}
+
+.toggle-icon {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.univers-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.univers-details.open {
+    max-height: 3000px;
+    margin-top: 30px;
+}
+
+.univers-section {
+    margin-bottom: 30px;
+}
+
+.univers-section h4 {
+    font-size: 24px;
+    color: var(--rose-froid);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.univers-list {
+    list-style: none;
+    padding: 0;
+}
+
+.univers-list li {
+    font-size: 17px;
+    color: var(--texte);
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.univers-list li::before {
+    content: '༅';
+    position: absolute;
+    left: 0;
+    color: var(--rose-froid);
+    font-size: 20px;
+}
+
+.univers-item-detail {
+    padding-left: 0 !important;
+}
+
+.univers-item-detail::before {
+    display: none;
+}
+
+.univers-item-detail strong {
+    display: block;
+    font-size: 19px;
+    color: var(--texte);
+    margin-bottom: 8px;
+}
+
+.univers-item-detail p {
+    font-size: 16px;
+    color: #718096;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.item-meta {
+    display: block;
+    font-size: 14px;
+    color: #94a3b8;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.pdf-download {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--rose-froid);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.pdf-download:hover {
+    background: var(--gris-anthracite);
+    transform: translateY(-2px);
+}
+
+.univers-temoignage {
+    background: var(--gris-perle);
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 25px;
+    border-left: 3px solid var(--rose-froid);
+}
+
+.univers-temoignage .temoignage-text {
+    font-size: 16px;
+    color: var(--texte);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.univers-temoignage .temoignage-author {
+    font-size: 14px;
+    color: #718096;
+    font-weight: 600;
+}
+
+/* ===== MUSIQUE SECTION (V2) ===== */
+.musique-section {
+    padding: 100px 40px;
+    background: var(--blanc);
+}
+
+.musique-section h2 {
+    font-size: 48px;
+    color: var(--texte);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.spotify-embed {
+    background: white;
+    padding: 50px;
+    border-radius: 12px;
+    margin: 40px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.spotify-embed h3 {
+    font-size: 28px;
+    color: var(--texte);
+    margin-bottom: 30px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin: 50px 0;
+}
+
+.video-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-10px);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 280px;
+}
+
+.video-info {
+    padding: 25px;
+}
+
+.video-info h3 {
+    font-size: 22px;
+    color: var(--texte);
+    margin-bottom: 10px;
+}
+
+.video-info p {
+    color: #718096;
+}
+
+.platform-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.platform-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: var(--rose-froid);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.platform-link:hover {
+    background: var(--gris-anthracite);
+    transform: translateY(-3px);
+}
+
+.youtube-cta {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.youtube-cta a {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--rose-froid);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.youtube-cta a:hover {
+    background: var(--gris-anthracite);
+    transform: translateY(-3px);
+}
+
+/* ===== CTA COLLABORATION (V2) ===== */
+.cta-collaboration {
+    padding: 100px 40px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--gris-anthracite) 0%, var(--rose-froid) 100%);
+    color: white;
+}
+
+.cta-collaboration h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cta-collaboration p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    color: white;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+.cta-primary {
+    display: inline-block;
+    padding: 18px 40px;
+    background: var(--blanc);
+    color: var(--rose-froid);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--blanc);
+}
+
+.cta-primary:hover {
+    background: var(--rose-froid);
+    color: var(--blanc);
+    border-color: var(--blanc);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== TESTIMONIALS (V1) ===== */
+.testimonials-diagonal {
+    padding: 120px 40px;
+    background-image: url('PhotoQuote.jpg');
+    background-size: 100%;
+    background-position: center;
+    position: relative;
+    min-height: 600px;
+}
+
+.testimonials-diagonal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(247, 250, 252, 0.35);
+    z-index: 1;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-left {
+    justify-self: start;
+    max-width: 500px;
+}
+
+.testimonial-right {
+    justify-self: end;
+    max-width: 500px;
+    margin-top: 100px;
+}
+
+.testimonial {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    border-left: 4px solid var(--rose-froid);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.testimonial::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 80px;
+    color: rgba(184, 92, 122, 0.15);
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    color: var(--texte);
+    margin-bottom: 20px;
+    font-style: italic;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--texte);
+    margin-bottom: 5px;
+    font-style: normal;
+}
+
+.testimonial-title {
+    color: #718096;
+    font-size: 14px;
+    font-style: normal;
+}
+
+/* ===== FOOTER (V1) ===== */
+.footer {
+    padding: 60px 40px 40px;
+    text-align: center;
+    background: var(--gris-anthracite);
+    color: #e2e8f0;
+}
+
+.newsletter {
+    padding: 60px;
+    background: var(--gris-perle);
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.newsletter h3 {
+    font-size: 32px;
+    color: var(--texte);
+    margin-bottom: 15px;
+}
+
+.newsletter p {
+    color: #718096;
+    margin-bottom: 30px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.newsletter-form button {
+    padding: 15px 35px;
+    background: var(--rose-froid);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.newsletter-form button:hover {
+    background: var(--gris-anthracite);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--rose-froid);
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #e2e8f0;
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    border-color: var(--rose-froid);
+    color: var(--rose-froid);
+    transform: translateY(-3px);
+}
+
+/* ===== RESPONSIVE - STYLE MOBILE ===== */
+@media (max-width: 768px) {
+    /* Header plus compact */
+    .header {
+        padding: 20px 24px;
+    }
+    
+    .logo {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    
+    .menu-button {
+        font-size: 20px;
+    }
+    
+    .menu-letter {
+        height: 26px;
+    }
+    
+    .menu-letter-content span {
+        height: 26px;
+        line-height: 26px;
+    }
+    
+    .menu-button:hover .letter-1 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-2 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-3 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-4 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-5 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-6 .menu-letter-content { transform: translateY(-26px); }
+    
+    /* Hero épuré */
+    .hero {
+        min-height: 100vh;
+        padding: 100px 24px 40px;
+        align-items: flex-end;
+    }
+    
+    .animation-wrapper {
+        height: auto;
+        min-height: 280px;
+    }
+    
+    /* Titres plus petits et élégants */
+    .line-inspire {
+        font-size: 64px;
+        line-height: 1.1;
+    }
+    
+    .line-exprime {
+        font-size: 64px;
+        margin-left: 20px;
+        margin-top: 5px;
+        min-height: 64px;
+    }
+    
+    .line-inspire .i-inspire {
+        -webkit-text-stroke: 1.5px var(--texte);
+    }
+    
+    .letter.i-exprime {
+        -webkit-text-stroke: 1.5px var(--rose-froid);
+    }
+    
+    /* Philosophie plus compact */
+    .philosophie {
+        padding: 60px 24px;
+    }
+    
+    .philosophie h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .philosophie p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    
+    /* Container avec padding réduit */
+    .container {
+        padding: 0 24px;
+    }
+    
+    /* Mes Univers */
+    .mes-univers {
+        padding: 60px 24px;
+    }
+    
+    .mes-univers h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    
+    .univers-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .univers-card {
+        padding: 30px;
+    }
+    
+    .univers-symbole {
+        font-size: 40px;
+    }
+    
+    .univers-card h3 {
+        font-size: 28px;
+    }
+    
+    /* Musique section */
+    .musique-section {
+        padding: 60px 24px;
+    }
+    
+    .musique-section h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    
+    .spotify-embed {
+        padding: 30px 24px;
+        margin: 30px 0;
+    }
+    
+    .spotify-embed h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 40px 0;
+    }
+    
+    .video-item iframe {
+        height: 220px;
+    }
+    
+    .video-info {
+        padding: 20px;
+    }
+    
+    .video-info h3 {
+        font-size: 20px;
+    }
+    
+    .video-info p {
+        font-size: 15px;
+    }
+    
+    .platform-links {
+        flex-direction: column;
+        gap: 12px;
+        margin: 40px 0;
+    }
+    
+    .platform-link {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px;
+    }
+    
+    /* CTA Collaboration */
+    .cta-collaboration {
+        padding: 60px 24px;
+    }
+    
+    .cta-collaboration h2 {
+        font-size: 34px;
+        margin-bottom: 16px;
+    }
+    
+    .cta-collaboration p {
+        font-size: 19px;
+        margin-bottom: 30px;
+    }
+    
+    .cta-primary {
+        padding: 16px 36px;
+        font-size: 16px;
+    }
+    
+    /* Testimonials en colonne */
+    .testimonials-diagonal {
+        padding: 60px 24px;
+    }
+    
+    .testimonials-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .testimonial-left,
+    .testimonial-right {
+        justify-self: center;
+        max-width: 100%;
+        margin-top: 0;
+    }
+    
+    .testimonial {
+        padding: 36px;
+    }
+    
+    .testimonial::before {
+        font-size: 76px;
+        top: -8px;
+        left: 20px;
+    }
+    
+    .testimonial-text {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    
+    .testimonial-author {
+        font-size: 17px;
+    }
+    
+    .testimonial-title {
+        font-size: 16px;
+    }
+    
+    /* Footer/Newsletter */
+    .footer {
+        padding: 50px 24px 30px;
+    }
+    
+    .newsletter {
+        padding: 40px 24px;
+        margin-bottom: 50px;
+    }
+    
+    .newsletter h3 {
+        font-size: 26px;
+        margin-bottom: 14px;
+    }
+    
+    .newsletter p {
+        font-size: 18px;
+        margin-bottom: 26px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        padding: 14px 20px;
+    }
+    
+    .footer-links {
+        flex-direction: row;
+        gap: 20px;
+        font-size: 14px;
+    }
+    
+    .footer p {
+        font-size: 13px;
+    }
+    
+    /* Menu overlay */
+    .menu-close {
+        top: 20px;
+        right: 24px;
+        font-size: 32px;
+    }
+    
+    .menu-nav a {
+        font-size: 36px;
+        padding-right: 50px;
+    }
+    
+    .menu-nav a::after {
+        font-size: 28px;
+    }
+}
+
+/* Petits écrans supplémentaires */
+@media (max-width: 480px) {
+    .line-inspire {
+        font-size: 56px;
+    }
+    
+    .line-exprime {
+        font-size: 56px;
+        margin-left: 16px;
+        min-height: 56px;
+    }
+    
+    .philosophie h2 {
+        font-size: 28px;
+    }
+    
+    .philosophie p {
+        font-size: 18px;
+    }
+    
+    .mes-univers h2 {
+        font-size: 30px;
+    }
+    
+    .cta-collaboration h2,
+    .musique-section h2 {
+        font-size: 30px;
+    }
+    
+    .menu-nav a {
+        font-size: 32px;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 12px 16px;
+    }
+}
