@@ -7,9 +7,7 @@ const SITE_CONFIG = {
     // Hero section
     hero: {
         mot1: "Inspire",
-        mot2: "exprime",
-        titre: "Donnez voix à votre inspiration,<br>donnez vie à votre projet.",
-        description: "Créatrice d'expériences vocales, maître de cérémonie et artiste collaborative. J'apporte authenticité et magie à vos événements et créations musicales."
+        mot2: "exprime"
     },
 
     // Philosophie (nouvelle section après hero)
@@ -172,13 +170,12 @@ const SITE_CONFIG = {
 
     // Photos
     photos: {
-        landing: "PhotoLanding.jpg",
         quote: "PhotoQuote.jpg"
     },
 
-    // Newsletter
+    // Newsletter (intégrée au footer)
     newsletter: {
-        titre: "Inspirations Vocales",
+        titre: "Restez inspirés",
         description: "Recevez mes actualités créatives, découvrez mes prochains concerts et explorez avec moi l'univers de l'expression vocale."
     },
 
@@ -192,7 +189,7 @@ const SITE_CONFIG = {
         appleMusic: "https://music.apple.com/artist/sophie-bijjani"
     },
 
-    // MENU DE NAVIGATION
+    // MENU DE NAVIGATION (simplifié - ancres de scroll)
     navigation: [
         { nom: "Accueil", ancre: "#hero" },
         { nom: "Mes univers", ancre: "#univers" },
