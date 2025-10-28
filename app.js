@@ -175,7 +175,18 @@ function renderUniversDetails(univers) {
         html += `<a href="${univers.pdfLien}" class="pdf-download" target="_blank">${univers.pdfTexte}</a>`;
     }
     
-    if (univers.temoignage) {
+    // Gérer témoignages multiples (nouveau format) ou simple (ancien format)
+    if (univers.temoignages && Array.isArray(univers.temoignages)) {
+        univers.temoignages.forEach(temoignage => {
+            html += `
+                <div class="univers-temoignage">
+                    <p class="temoignage-text">"${temoignage.texte}"</p>
+                    <p class="temoignage-author">— ${temoignage.auteur}${temoignage.titre ? `, ${temoignage.titre}` : ''}</p>
+                </div>
+            `;
+        });
+    } else if (univers.temoignage) {
+        // Ancien format (pour compatibilité)
         html += `
             <div class="univers-temoignage">
                 <p class="temoignage-text">"${univers.temoignage.texte}"</p>
@@ -257,24 +268,6 @@ function initMusique() {
     // YouTube CTA
     document.getElementById('youtubeLink').textContent = SITE_CONFIG.musique.ctaYoutube;
     document.getElementById('youtubeLink').href = SITE_CONFIG.liens.youtube;
-    
-    // Platform links
-    const platformLinks = document.getElementById('platformLinks');
-    const platforms = [
-        { nom: 'Spotify', lien: SITE_CONFIG.liens.spotify, icon: '🎵' },
-        { nom: 'Apple Music', lien: SITE_CONFIG.liens.appleMusic, icon: '🍎' },
-        { nom: 'Deezer', lien: SITE_CONFIG.liens.deezer, icon: '🎧' },
-        { nom: 'YouTube', lien: SITE_CONFIG.liens.youtube, icon: '▶️' }
-    ];
-    
-    platforms.forEach(platform => {
-        const link = document.createElement('a');
-        link.className = 'platform-link';
-        link.href = platform.lien;
-        link.target = '_blank';
-        link.innerHTML = `<span>${platform.icon}</span> ${platform.nom}`;
-        platformLinks.appendChild(link);
-    });
 }
 
 // ===== CTA COLLABORATION =====
@@ -377,6 +370,7 @@ function closeMenu() {
 function initFooter() {
     document.getElementById('newsletterTitre').textContent = SITE_CONFIG.newsletter.titre;
     document.getElementById('newsletterDescription').textContent = SITE_CONFIG.newsletter.description;
+    document.getElementById('footerCredit').textContent = SITE_CONFIG.footer.credit;
     document.getElementById('footerCopyright').textContent = SITE_CONFIG.footer.copyright;
     
     // Icônes SVG
